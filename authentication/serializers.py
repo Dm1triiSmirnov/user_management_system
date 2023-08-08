@@ -1,5 +1,6 @@
-from users.models import CustomUser
 from rest_framework import serializers
+
+from users.models import CustomUser
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -8,14 +9,14 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'password', 'password2']
+        fields = ["username", "email", "password", "password2"]
 
     def validate(self, data):
         """
         Validate the password and password2 fields.
         """
-        password = data.get('password')
-        password2 = data.get('password2')
+        password = data.get("password")
+        password2 = data.get("password2")
         if password and password2 and password != password2:
             raise serializers.ValidationError("Passwords doesn't match.")
         return data
@@ -24,8 +25,8 @@ class RegisterSerializer(serializers.ModelSerializer):
         """
         Create and return a new user.
         """
-        del validated_data['password2']
+        del validated_data["password2"]
         user = CustomUser(**validated_data)
-        user.set_password(validated_data['password'])
+        user.set_password(validated_data["password"])
         user.save()
         return user

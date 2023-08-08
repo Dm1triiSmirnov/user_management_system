@@ -1,7 +1,8 @@
 from rest_framework.generics import CreateAPIView
-from .serializers import RegisterSerializer
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+
+from .serializers import RegisterSerializer
 
 
 class UserRegistrationAPIView(CreateAPIView):
@@ -14,7 +15,9 @@ class UserRegistrationAPIView(CreateAPIView):
         user = serializer.save()
         return Response(
             {
-                "user": RegisterSerializer(user, context=self.get_serializer_context()).data,
+                "user": RegisterSerializer(
+                    user, context=self.get_serializer_context()
+                ).data,
                 "message": "User Created Successfully.  Now perform Login to get your token",
             }
         )

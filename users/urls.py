@@ -1,12 +1,12 @@
 from django.urls import path
 
-from users.views import UserRetrieveDestroyViewSet
+from users.views import UserRetrieveUpdateDestroyViewSet
 
 urlpatterns = [
     path(
         "<str:username>/",
-        UserRetrieveDestroyViewSet.as_view({"get": "retrieve",
-                                            "patch": "partial_update",
-                                            "delete": "destroy"})
+        UserRetrieveUpdateDestroyViewSet.as_view(
+            {"get": "retrieve", "patch": "partial_update", "delete": "destroy"}
+        ),
     ),
-    ]
+]
