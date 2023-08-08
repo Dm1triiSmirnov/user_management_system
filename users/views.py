@@ -18,10 +18,12 @@ class UserRetrieveUpdateDestroyViewSet(
         permissions.IsAuthenticated,
     ]
 
-    def check_ownership(self, user):
+    def check_ownership(self, user) -> bool:
+        """Function to check ownership of user account"""
         return user.id == self.get_object().id
 
-    def retrieve(self, request, *args, **kwargs):
+    def retrieve(self, request, *args, **kwargs) -> Response:
+        """Function to retrieve users information"""
         username = kwargs["username"]
         if not self.check_ownership(request.user):
             return Response(
@@ -32,7 +34,8 @@ class UserRetrieveUpdateDestroyViewSet(
         serializer = UserSerializer(queryset)
         return Response(serializer.data)
 
-    def partial_update(self, request, *args, **kwargs):
+    def partial_update(self, request, *args, **kwargs) -> Response:
+        """Function to update users information"""
         user = self.get_object()
 
         if not self.check_ownership(request.user):
@@ -46,7 +49,8 @@ class UserRetrieveUpdateDestroyViewSet(
         serializer.save()
         return Response(serializer.data)
 
-    def destroy(self, request, *args, **kwargs):
+    def destroy(self, request, *args, **kwargs) -> Response:
+        """Function to delete users account"""
         user = self.get_object()
 
         if not self.check_ownership(request.user):
