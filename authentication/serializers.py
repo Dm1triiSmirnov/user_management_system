@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.permissions import AllowAny
 
 from users.models import CustomUser
 
@@ -6,10 +7,11 @@ from users.models import CustomUser
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
     password2 = serializers.CharField(write_only=True)
+    permission_classes = [AllowAny]
 
     class Meta:
         model = CustomUser
-        fields = ["username", "email", "password", "password2"]
+        fields = ["email", "username", "password", "password2"]
 
     def validate(self, data):
         """
