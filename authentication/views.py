@@ -10,7 +10,8 @@ class UserRegistrationAPIView(CreateAPIView):
     serializer_class = RegisterSerializer
     permission_classes = [AllowAny]
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs) -> Response:
+        """Register new user"""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
@@ -19,7 +20,7 @@ class UserRegistrationAPIView(CreateAPIView):
                 "user": RegisterSerializer(
                     user, context=self.get_serializer_context()
                 ).data,
-                "message": "User Created Successfully."
+                "message": "User Created Successfully. "
                            "Now perform Login to get your token",
             },
             status=status.HTTP_201_CREATED,
