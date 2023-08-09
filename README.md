@@ -55,25 +55,25 @@ Password are hashed and safely stored in database.
 <br><br>
 
 ### Create & setup database:
-1. Connect to PostgreSQL: <br>
+  1. Connect to PostgreSQL: <br>
 sudo postgres psql <br>
  <br>
-2. Create DB:<br>
+  2. Create DB:<br>
 CREATE DATABASE user_management_system_db;<br>
  <br>
-3. Create user & set password:<br>
+  3. Create user & set password:<br>
 CREATE USER username WITH PASSWORD 'password';<br>
  <br>
-4. Set encoding UTF-8:<br>
+  4. Set encoding UTF-8:<br>
 ALTER ROLE username SET client_encoding TO 'utf8';<br>
  <br>
-5. Set isolation level: <br>
+  5. Set isolation level: <br>
 ALTER ROLE username SET default_transaction_isolation TO 'read committed';<br>
  <br>
-6. Set time zone UTC: <br>
+  6. Set time zone UTC: <br>
 ALTER ROLE username SET timezone TO 'UTC';<br>
  <br>
-7. Grant permissions for user: <br>
+  7. Grant permissions for user: <br>
 GRANT ALL PRIVILEGES ON DATABASE user_management_system_db TO username;<br>
  <br><br>
 
