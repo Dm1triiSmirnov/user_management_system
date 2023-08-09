@@ -55,6 +55,7 @@ Password are hashed and safely stored in database.
 <br><br>
 
 ### Create & setup database:
+
 1. Connect to PostgreSQL: <br>
 sudo postgres psql <br>
  <br>
