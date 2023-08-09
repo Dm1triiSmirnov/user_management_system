@@ -63,19 +63,19 @@ Password are hashed and safely stored in database.
 - Create DB:<br>
 ```CREATE DATABASE user_management_system_db;```<br>
  <br>
--  Create user & set password:<br>
+- Create user & set password:<br>
 CREATE USER username WITH PASSWORD 'password';<br>
  <br>
--  Set encoding UTF-8:<br>
+- Set encoding UTF-8:<br>
 ```ALTER ROLE username SET client_encoding TO 'utf8';```<br>
  <br>
--  Set isolation level: <br>
+- Set isolation level: <br>
 ```ALTER ROLE username SET default_transaction_isolation TO 'read committed';```<br>
  <br>
--  Set time zone UTC: <br>
+- Set time zone UTC: <br>
 ```ALTER ROLE username SET timezone TO 'UTC';```<br>
  <br>
--  Grant permissions for user: <br>
+- Grant permissions for user: <br>
 ```GRANT ALL PRIVILEGES ON DATABASE user_management_system_db TO username;```<br>
  <br><br>
 
