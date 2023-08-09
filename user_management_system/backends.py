@@ -1,5 +1,5 @@
-from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
+from django.contrib.auth.backends import ModelBackend
 
 
 class EmailBackend(ModelBackend):
@@ -7,6 +7,7 @@ class EmailBackend(ModelBackend):
     Class used for user login, that allow
     user to login by using his username or email
     """
+
     def authenticate(self, request, username=None, password=None, **kwargs):
         UserModel = get_user_model()
         try:

@@ -2,11 +2,11 @@ install:
 	poetry install
 
 lint:
-	poetry run flake8
+	poetry run flake8 authentication tests users user_management_system
 
 format:
-	poetry run black .
-	poetry run isort .
+	poetry run black authentication tests users user_management_system
+	poetry run isort authentication tests users user_management_system
 
 run:
 	poetry run python3 manage.py runserver
