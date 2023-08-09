@@ -110,6 +110,7 @@ DB_PORT='5432'<br><br>
 ```POST /auth/register/```
 <br><br>
 Request Body:
+<br>
 {<br>
     "email": "your email",<br>
     "username": "your username",<br>
@@ -132,16 +133,14 @@ Request Body:
 3. Retrieve the profile information of a user: <br>
 ```GET /user/profile/{username}/```
 <br><br>
-Add header to your request: 
-<br>
+Add header to your request:
 "Authorization: Bearer your_access_token"
 <br><br>
 
 4. Update the profile information: <br>
 ```PATCH /user/profile/{username}/```
 <br><br>
-Add header to your request: 
-<br>
+Add header to your request:
 "Authorization: Bearer your_access_token"
 <br><br>
 Request Body (add any information that you want to update):
@@ -155,7 +154,6 @@ Request Body (add any information that you want to update):
 5. Delete the user account: <br>
 ```DELETE /user/profile/{username}/```
 <br><br>
-Add header to your request: 
-<br>
+Add header to your request:
 "Authorization: Bearer your_access_token"
 <br><br>
