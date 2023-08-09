@@ -63,18 +63,23 @@ Password are hashed and safely stored in database.
 - Create DB:<br>
 ```CREATE DATABASE user_management_system_db;```<br>
  <br>
+
 - Create user & set password:<br>
 CREATE USER username WITH PASSWORD 'password';<br>
  <br>
+
 - Set encoding UTF-8:<br>
 ```ALTER ROLE username SET client_encoding TO 'utf8';```<br>
  <br>
+
 - Set isolation level: <br>
 ```ALTER ROLE username SET default_transaction_isolation TO 'read committed';```<br>
  <br>
+
 - Set time zone UTC: <br>
 ```ALTER ROLE username SET timezone TO 'UTC';```<br>
  <br>
+
 - Grant permissions for user: <br>
 ```GRANT ALL PRIVILEGES ON DATABASE user_management_system_db TO username;```<br>
  <br><br>
@@ -100,11 +105,11 @@ DB_PORT='5432'<br><br>
 ```make run```
 
 ### Now you can use following Endpoints:
+
 1. User register: <br>
 ```POST /auth/register/```
 <br><br>
 Request Body:
-<br>
 {<br>
     "email": "your email",<br>
     "username": "your username",<br>
@@ -112,6 +117,7 @@ Request Body:
     "password2": "repeate password" <br>
 }
 <br><br>
+
 2. User login & obtain tokens for authentication: <br>
 ```POST /auth/token/```
 <br><br>
@@ -122,6 +128,7 @@ Request Body:
     "password": "your password",<br>
 }
 <br><br>
+
 3. Retrieve the profile information of a user: <br>
 ```GET /user/profile/{username}/```
 <br><br>
@@ -129,6 +136,7 @@ Add header to your request:
 <br>
 "Authorization: Bearer your_access_token"
 <br><br>
+
 4. Update the profile information: <br>
 ```PATCH /user/profile/{username}/```
 <br><br>
@@ -143,6 +151,7 @@ Request Body (add any information that you want to update):
     "last_name": "Smith",<br>
 }
 <br><br>
+
 5. Delete the user account: <br>
 ```DELETE /user/profile/{username}/```
 <br><br>
