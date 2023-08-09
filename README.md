@@ -109,9 +109,7 @@ DB_PORT='5432'<br><br>
 1. User register: <br>
 ```POST /auth/register/```
 <br><br>
-Request Body:
-<br>
-{<br>
+Request Body: {<br>
     "email": "your email",<br>
     "username": "your username",<br>
     "password": "your password",<br>
@@ -122,9 +120,7 @@ Request Body:
 2. User login & obtain tokens for authentication: <br>
 ```POST /auth/token/```
 <br><br>
-Request Body:
-<br>
-{<br>
+Request Body: {<br>
     "username": "your email or username",<br>
     "password": "your password",<br>
 }
@@ -143,9 +139,8 @@ Add header to your request:
 Add header to your request:
 "Authorization: Bearer your_access_token"
 <br><br>
-Request Body (add any information that you want to update):
-<br>
-{<br>
+Add any information in to request body that you want to update<br>
+Request Body:{<br>
     "first_name": "John",<br>
     "last_name": "Smith",<br>
 }
