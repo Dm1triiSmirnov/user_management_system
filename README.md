@@ -65,7 +65,7 @@ Password are hashed and safely stored in database.
  <br>
 
 - Create user & set password:<br>
-CREATE USER username WITH PASSWORD 'password';<br>
+```CREATE USER username WITH PASSWORD 'password';```<br>
  <br>
 
 - Set encoding UTF-8:<br>
@@ -139,7 +139,8 @@ Add header to your request:
 Add header to your request:
 "Authorization: Bearer your_access_token"
 <br><br>
-Add any information in to request body that you want to update<br>
+Add any information in to request body that you want to update
+<br><br>
 Request Body:{<br>
     "first_name": "John",<br>
     "last_name": "Smith",<br>
