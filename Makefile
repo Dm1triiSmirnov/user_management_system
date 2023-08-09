@@ -11,3 +11,5 @@ format:
 run:
 	poetry run python3 manage.py runserver
 
+run-tests:
+	poetry run pytest -vvv
