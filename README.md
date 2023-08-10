@@ -84,14 +84,18 @@ Password are hashed and safely stored in database.
 ```GRANT ALL PRIVILEGES ON DATABASE user_management_system_db TO username;```<br>
  <br><br>
 
-### Set environment variables in .env as following:
+### Set environment variables in .env file as following:
 SECRET_KEY='secret key for your ptoject'<br>
 DB_NAME='user_management_system_db'<br>
 DB_USER='username'<br>
 DB_PASSWORD='password'<br>
 DB_HOST=localhost<br>
 DB_PORT='5432'<br><br>
+<br>
 
+### Install depedecies:
+```make install```
+<br><br>
 
 ### Create superuser for your project:
 ```python3 manage.py createsuperuser --email example@example.com --username user```
